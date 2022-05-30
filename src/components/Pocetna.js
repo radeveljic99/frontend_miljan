@@ -12,7 +12,7 @@ class Pocetna extends React.Component {
 		this.state.selectedCategory = {id: 1, name: ''};
 		// this.state.search = this.props.search;
 		this.state.numberOfProducts = 0;
-		this.state.productsPerPage = 6;
+		this.state.productsPerPage = 8;
 		this.state.activatedPage = 1;
 		this.state.searching = false;
 		this.state.search = '';
@@ -134,7 +134,7 @@ class Pocetna extends React.Component {
 			}
 			{this.state.proizvodi.length === 0 && this.state.search === '' ?
 				<div className="w-full h-screen"></div> : ''}
-			<div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6 my-4">
+			<div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-6">
 				{
 					this.state.proizvodi.map((product) => <Proizvod
 						key={product.id}
@@ -149,7 +149,7 @@ class Pocetna extends React.Component {
 			</div>
 			{
 				this.state.proizvodi.length !== 0 ?
-					<div className="w-full flex justify-center">
+					<div className="w-full flex justify-center my-4">
 						<Pagination
 							activatedPage={this.state.activatedPage}
 							productsPerPage={this.state.productsPerPage}

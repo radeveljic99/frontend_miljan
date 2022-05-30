@@ -75,12 +75,12 @@ class Navbar extends React.Component {
 						</div> : ''
 					}
 
-					{loggedIn === false ? <div className="border-2 border-gray-200 mb-1 p-2 rounded-2xl text-black
+					{loggedIn === false ? <div className="border-2 border-gray-200 mb-1 p-2 text-black
                     font-semibold hover:bg-gray-200 hover:text-black">
 						<Link to='/login'>Prijava</Link>
 					</div> : ''}
 					{loggedIn === false ?
-						<div className="hidden sm:flex border-2 border-gray-200  mb-1 p-2 rounded-2xl text-black font-semibold  hover:bg-gray-200
+						<div className="hidden sm:flex border-2 border-gray-200  mb-1 p-2 text-black font-semibold  hover:bg-gray-200
             hover:text-black">
 							<Link to='/register'>Registruj se </Link>
 						</div> : ''

@@ -130,22 +130,22 @@ class AdminPanel extends React.Component {
 
 
 	render() {
-		return <div className="flex bg-gray-100 text-black">
+		return <div className="flex bg-gray-100 text-black mt-1">
 			<div className="flex flex-col w-80 h-screen px-4 py-8 overflow-y-auto border-r">
-				<h2 className="text-3xl font-semibold text-center">Admin Panel</h2>
+				<h2 className="text-3xl font-semibold text-center">Auto djelovi</h2>
 				<div className="flex flex-col justify-between mt-6">
 					<aside>
 						<ul>
 							<li>
 								<button
 									onClick={this.setActiveComponent.bind(this, 'addProduct')}
-									className="w-full mr-4 text-xl font-medium border border-white rounded-xl px-4 py-2 hover:bg-gray-200">
+									className="w-full mr-4 text-xl font-medium border border-black px-4 py-2 hover:bg-gray-200">
 									Dodaj proizvod
 								</button>
 							</li>
 							<li>
 								<button onClick={this.setActiveComponent.bind(this, 'addCategory')}
-										className="w-full mt-4 mr-4 text-xl font-medium border border-white rounded-xl px-4 py-2 hover:bg-gray-200">
+										className="w-full mt-4 mr-4 text-xl font-medium border border-black px-4 py-2 hover:bg-gray-200">
 									Dodaj kategoriju
 								</button>
 							</li>
