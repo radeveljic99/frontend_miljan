@@ -1,0 +1,245 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 12, 2021 at 09:42 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.3.27
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `zemlja_snova`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `product_id`, `user_id`) VALUES
+(69, 12, 7),
+(73, 18, 26);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `name` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'Proljeće/Ljeto'),
+(3, 'Šeširi'),
+(5, 'Torbe'),
+(6, 'Šalovi'),
+(9, 'Rukavice'),
+(12, 'Jesen/Zima');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `price` decimal(7,2) DEFAULT NULL,
+  `path` varchar(500) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `price`, `path`, `category_id`) VALUES
+(1, 'Haljina Žuta Made in Turkey', '120.00', '/img/zs1.png', 1),
+(2, 'Haljina Narandzasta Pruge', '70.00', '/img/zs2.png', 1),
+(3, 'Šešir plavi', '40.00', '/img/zs10.png', 3),
+(4, 'Crvene rukavice', '10.00', '/img/zs11.png', 9),
+(5, 'Haljina sa cvjetovima', '50.00', '/img/zs3.png', 1),
+(6, 'Narandzasta haljina sa cvjetovima', '72.00', '/img/zs4.png', 1),
+(7, 'Kafene rukavice', '15.00', '/img/zs12.png', 9),
+(8, 'Crne kožne rukavice', '13.00', '/img/zs13.png', 9),
+(9, 'Tamnoplave Rukavice', '20.00', '/img/zs14.png', 9),
+(10, 'Braon zimske rukavice', '25.00', '/img/zs15.png', 9),
+(11, 'Kuhinjske rukavice', '25.00', '/img/zs16.jpg', 9),
+(12, 'Zimski sareni Sal', '15.00', '/img/zs16.png', 6),
+(13, 'Zimski sareni Sal 2', '15.00', '/img/zs17.png', 6),
+(14, 'Crveni Zimski šal', '24.00', '/img/zs18.png', 6),
+(17, 'Zelene Zimske Rukavice', '20.00', '/img/zs19.png', 9),
+(18, 'Braon Kožna Torba', '40.00', '/img/torba1.png', 5),
+(19, 'Rukavice sa suncokretima', '25.00', '/img/rukavice1.png', 9),
+(20, 'Braon Zimske Rukavice', '26.00', '/img/brRukavice.png', 9),
+(21, 'Roze Zimski Kaput', '60.00', '/img/rozeKaput.png', 12),
+(22, 'Torba', '60.00', '/img/torba.png', 5),
+(23, 'Crveno Crne Zimske Rukavice', '20.00', '/img/crveneRukavice.png', 9),
+(24, 'Plava Haljina', '60.00', '/img/PlavaHaljina.png', 1),
+(25, 'Plava Kosulja', '45.00', '/img/plavaKosulja.png', 1),
+(26, 'Plava Kratka Haljina', '40.00', '/img/plavaHaljina2.png', 1),
+(27, 'Zimski Kafeni Kaput', '80.00', '/img/kaputZimskiKafeni.jpg', 12),
+(28, 'Bijeli Zimski Kaput', '80.00', '/img/BIjeliZimskiKaput.png', 12),
+(29, 'Crveni Dzemper', '40.00', '/img/CrveniDzemper.jpg', 12),
+(30, 'Crno-Bijeli Kaput', '25.99', '/img/CrnoBijeliKaput.jpg', 12),
+(31, 'Braon Kaput', '45.99', '/img/BraonKaput.png', 12),
+(32, 'Ljubicasti Sal', '14.99', '/img/Ljubicasti sal.png', 6),
+(33, 'Plavi Sal', '14.99', '/img/PlaviSal.png', 6),
+(34, 'Roze Sal Pruge', '13.99', '/img/RozeSalPruge.png', 6),
+(35, 'Sky Blue Sal', '19.99', '/img/SkyBlueSal.png', 6),
+(36, 'Zuti Pamucni Sal', '20.55', '/img/ZutiPamucniSal.png', 6),
+(37, 'Zute Kozne Rukavice', '20.00', '/img/ZuteKozne.png', 9),
+(38, 'Zimske Crno Bijele Rukavice', '20.00', '/img/ZimskeCrnoBele.png', 9),
+(39, 'Zimske Klasicne Rukavice', '11.00', '/img/ZimskeKlasicne.png', 9),
+(40, 'Zimska Kozna Jakna', '59.99', '/img/Zimska Kozna Jakna.jpg', 12),
+(41, 'Braon Kozna Torba', '18.99', '/img/BraonKoznaTorba.png', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `balance` decimal(7,2) DEFAULT NULL,
+  `is_admin` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `lastname`, `email`, `balance`, `is_admin`) VALUES
+(1, 'Miljan', 'Veljic', 'miljan11@hotmail.com', '1000.00', 0),
+(2, 'Rade', 'Velic', 'rade.veljic99@gmail.com', '2000.00', 0),
+(5, 'Mia', 'Djolovic', 'miadjolovic99@gmiail.com', '100.00', 0),
+(6, 'Luka', 'Boljevic', 'lukaboljevic@gmail.com', '2000.00', 0),
+(7, 'Andrija', 'Zivkovic', 'andrija.zivkovic@gmial.com', '1000.00', 0),
+(13, 'Ivona', 'Cetkovic', 'ivonacetkovic@gmail.com', '100.00', 0),
+(14, 'Biljana', 'Veljic', 'biljanaveljic@gmail.com', '2000.00', 0),
+(15, 'Petar', 'Sekulic', 'petar.sekulic@fleka.me', '2545.00', 0),
+(16, 'Ivan', 'Mitric', 'ivan.mitric@fleka.me', '209.00', 0),
+(17, 'Ognjen', 'Boskovic', 'ognjen.boskovic@fleka.me', '700.00', 0),
+(18, 'Danijela', 'Markovic', 'danijela.markovic@fleka.me', '9000.00', 0),
+(19, 'Mark', 'Khramko', 'mark.khramko@fleka.me', '2999.00', 0),
+(20, 'Miodrag', 'Racic', 'miodrag.racic@fleka.me', '200.00', 0),
+(21, 'Marko', 'Lekic', 'marko.lekic@fleka.me', '20852.00', 0),
+(22, 'Lucija', 'Jovanovic', 'lucija.jovanovic@gmail.com', '20000.00', 0),
+(23, 'Aleksandar', 'Popovic', 'aleksandar.popovic@ucg.edu.me', '20000.00', 0),
+(24, 'Rade', 'Veljic', 'rade.veljic@fleka.me', '99764.99', 1),
+(25, 'Slavko', 'Kovacevic', 'slavko.kovacevic@fleka.me', '30000.00', 0),
+(26, 'Vojislav', 'Djilas', 'vojislav.djilas@gmail.com', '22000.00', 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `product_id` (`product_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category_id` (`category_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `product`
+--
+ALTER TABLE `product`
+  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,53 @@
+        return <div className="h-full flex justify-center items-center gap-5 m-5 p-5 text-xl text-white">
+            <form className="flex m-5 p-5 flex-col border-2 rounded-md border-primary bg-base-200 shadow-lg">
+                <h1 className="text-center text-2xl">Dodaj proizvod</h1>
+                    <hr className="border mt-2" />
+                    <div className="pt-5">
+
+                        <div className="pd-5">
+                            <label htmlFor="name">Naziv Proizvoda</label>
+                            <br />
+                            <input type="text" id="name"
+                                className="pd-5 rounded-md text-black px-5 border-2 border-primary  w-full h-auto"
+                                value={this.state.productName}
+                                onChange={this.handleProductNameChanged}
+                            />
+                        </div>
+                        <div >
+                            <label htmlFor="image" className="my-5 py-5 w-auto">Slika</label>
+                            <br />
+                            <input type="file" id="image" name="file"
+                                className="pd-5 rounded-md px-5 text-white h-auto w-auto"
+                                onChange={this.onFileChange}
+                            />
+                        </div>
+
+                        <label htmlFor="categories" className="p-1 m-2">Kategorija </label>
+                        <br />
+                        <select name="category" id="categories" className="w-full m-2 border-2 border-primary rounded-md"
+                            placeholder="Izaberi kategoriju "
+                            value={this.state.selectedCategoryId} onChange={this.handleCategoryChange}>
+                            {this.state.kategorije.map(
+                                (kategorija) => <option value={kategorija.id}>{kategorija.name}</option>
+                            )}
+                        </select>
+                    </div>
+                    <div className="pd-5">
+                        <label htmlFor="price">Cijena</label>
+                        <br />
+                        <input type="number" id="price"
+                            className="pd-5 rounded-md px-5 border-2 text-black border-primary w-full"
+                            value={this.state.productPrice}
+                            onChange={this.handleProductPriceChanged}
+                        />
+                    </div>
+
+                    <button
+                        className="mt-5 border-2 text-center border-primary  rounded-md  font-semibold
+                             bg-primary hover:bg-base-200 flex items-center justify-center"
+                        onClick={this.onButtonClick}>
+                        Dodaj Proizvod
+                    </button>
+                    <hr className="border mt-5 mb-3" />
+            </form>
+        </div>
