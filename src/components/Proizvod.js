@@ -52,22 +52,22 @@ class Proizvod extends React.Component {
 	}
 
 	render() {
-		return <div className="card w-full bg-base-100 shadow-xl mr-4 hover:scale-1 min-h-[496px]">
-			<Link to='/#'
-				  onClick={this.redirectToProductDetails.bind(
-					  this, this.props.id, this.props.naziv, this.props.cijena, this.props.putanja, this.props.kategorija.name)}>
-				<figure className="min-h-[308px]">
-					<img src={this.props.putanja} alt="Shoes"/>
-				</figure>
-			</Link>
-			<div className="card-body text-white">
-				<h2 className="card-title capitalize">{this.props.naziv}</h2>
-				<p>Cijena : {this.props.cijena} €</p>
-				<div className="card-actions justify-start mt-2">
-					<button className="btn btn-primary"
-							onClick={this.addToCart.bind(this, this.props.id, this.props.naziv, this.props.cijena, this.props.putanja)}>Dodaj u korpu
-					</button>
-				</div>
+		return <div className="w-full max-w-sm mx-auto rounded-md shadow-md hover:shadow-lg overflow-hidden">
+			<div className="flex items-end justify-end h-56 w-full bg-cover relative">
+				<img src={this.props.putanja} className="w-full h-full object-cover object-fit object-center" alt=""/>
+				<button
+					onClick={this.addToCart.bind(this, this.props.id, this.props.naziv, this.props.cijena, this.props.putanja)}
+					className="absolute bottom-0 p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+					<svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24"
+						 stroke="currentColor">
+						<path
+							d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+					</svg>
+				</button>
+			</div>
+			<div className="px-5 py-3">
+				<h3 className="text-gray-700 uppercase">{this.props.naziv}</h3>
+				<span className="text-gray-500 mt-2">€ {this.props.cijena}</span>
 			</div>
 		</div>
 	}

@@ -58,7 +58,7 @@ class App extends React.Component {
                         isAdmin={this.state.isAdmin}
                         amount={this.state.amountOfProducts}/>
                 <Switch>
-                    <Route exact path='/' component={() => <Pocetna search={this.state.search}/>}/>
+                    <Route exact path='/' component={() => <Pocetna searchChanged={this.searchChanged} search={this.state.search}/>}/>
                     <Route path='/login' component={() => <Login handleLogin={this.handleLoginOrRegister}/>}/>
                     <Route path='/register' component={() => <Register handleRegister={this.handleLoginOrRegister}/>}/>
                     <Route path='/productDetails/:id' component={ProizvodDetalji}/>

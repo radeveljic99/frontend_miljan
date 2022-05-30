@@ -56,80 +56,47 @@ class Navbar extends React.Component {
 
 		return <div>
 			<nav
-				className="hidden md:flex justify-around bg-base-200 items-center space-y-1 border-b-2 b border-primary rounded-sm shadow-xl">
+				className="flex justify-around items-center space-y-1 rounded-sm shadow-xl">
 				<div className="flex justify-center items-center pl-2">
-					<div className="font-semibold text-2xl text-white">
+					<div className="font-semibold text-2xl text-black">
 						<Link to='/'>Pocetna</Link>
 					</div>
 				</div>
-				<div className="flex justify-center items-center space-x-1">
-					<input type="text" placeholder="Pretraži proizvode"
-						   className="border-2 border-white rounded-md px-2 py-1 w-full"
-						   value={this.state.search}
-						   onChange={this.searchChanged}/>
-				</div>
-				<div className="flex justify-center space-x-2 text-white">
+				<div className="flex justify-center space-x-2 text-black">
 					{
 						loggedIn === true ? <div className=" flex justify-center items-center py-2 px-3">
 							<Link to='/cart'>
-								<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="white"
-									 viewBox="0 0 24 24"
-									 stroke="white">
-									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-										  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707
-                                      1.707H17m00a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+								<svg className="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+									 viewBox="0 0 24 24" stroke="currentColor">
+									<path
+										d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
 								</svg>
 							</Link>
 						</div> : ''
 					}
 
-					{loggedIn === false ? <div className="border-2 border-primary mb-1 p-2 rounded-2xl text-white
-                    font-semibold hover:bg-primary hover:text-white">
+					{loggedIn === false ? <div className="border-2 border-gray-200 mb-1 p-2 rounded-2xl text-black
+                    font-semibold hover:bg-gray-200 hover:text-black">
 						<Link to='/login'>Prijava</Link>
 					</div> : ''}
 					{loggedIn === false ?
-						<div className="hidden sm:flex border-2 border-primary  mb-1 p-2 rounded-2xl text-white font-semibold  hover:bg-primary
-            hover:text-white">
+						<div className="hidden sm:flex border-2 border-gray-200  mb-1 p-2 rounded-2xl text-black font-semibold  hover:bg-gray-200
+            hover:text-black">
 							<Link to='/register'>Registruj se </Link>
 						</div> : ''
 					}
 					{
-						loggedIn === true ? <div className="border-2 border-text-white  mb-1 p-2 rounded-2xl
-                        text-primary font-semibold text-white hover:bg-primary hover:text-white ">
+						loggedIn === true ? <div className="border border-gray-200 mb-1 p-2
+                        text-primary font-semibold text-black hover:bg-gray-200 hover:text-black ">
 							<Link to='/#' onClick={this.logout}>Izloguj se </Link>
 						</div> : ''
 					}
 					{
-						loggedIn === true ?
-							<p className="hidden sm:flex text-white text-center mt-3 ml-3">{this.state.username}</p> : ''
-					}
-					{
-						isAdmin ? <div className="border-2 border-white mb-1 ml-5 p-2 rounded-2xl
-                        text-primary font-semibold text-white hover:bg-primary hover:text-white ">
+						isAdmin ? <div className="border border-gray-200 mb-1 ml-5 p-2
+                        text-primary font-semibold text-black hover:bg-gray-200 hover:text-black ">
 							<Link to='/admin'>Admin panel</Link>
 						</div> : ''
 					}
-				</div>
-			</nav>
-			<nav className="flex md:hidden bg-base-200 justify-between items-center">
-				<div className="container my-2 mx-auto flex justify-between items-center">
-					<Link className="ml-4 font-semibold text-2xl text-white" to='/'>Pocetna</Link>
-					{
-						loggedIn === true ? <div className="flex justify-center items-center py-2 mr-4">
-							<Link to='/cart'>
-								<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="white"
-									 viewBox="0 0 24 24"
-									 stroke="white">
-									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-										  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707
-                                      1.707H17m00a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-								</svg>
-							</Link>
-						</div> : ''
-					}
-					{loggedIn === false ? <div className="mb-1 p-2 rounded-2xl text-white font-semibold mr-4">
-						<Link to='/login'>Prijava</Link>
-					</div> : ''}
 				</div>
 			</nav>
 		</div>

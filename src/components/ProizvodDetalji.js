@@ -44,8 +44,8 @@ class ProizvodDetalji extends React.Component {
     }
 
     render() {
-        return <div style={{ minHeight: "82vh" }} className="text-white">
-            <h1 className="text-3xl text-primary text-center m-1 p-3 text-white"> Detalji o proizvodu </h1>
+        return <div style={{ minHeight: "82vh" }} className="text-black">
+            <h1 className="text-3xl text-primary text-center m-1 p-3 text-black"> Detalji o proizvodu </h1>
             <div className="flex justify-around items-baseline m-3 pb-2 ">
                 <div className="grid grid-cols-2 grid-flow-row rounded-xl shadow-2xl bg-base-200 border-2 border-white"
                     style={{ width: '65%', height: '80%' }}>
@@ -54,7 +54,7 @@ class ProizvodDetalji extends React.Component {
                     /></div>
                     <div className="text-center">
                         <div className="m-5 p-5"><h1
-                            className="text-white uppercase text-2xl mb-5 pb-5">{this.state.naziv} </h1>
+                            className="text-black uppercase text-2xl mb-5 pb-5">{this.state.naziv} </h1>
                             <div className="flex justify-around items-center ">
                                 <div className="px-5 m-5 text-xl text-bold"><p>Cijena </p></div>
                                 <div className="px-5 m-5 text-xl"><p> € {this.state.cijena}</p></div>
@@ -68,8 +68,8 @@ class ProizvodDetalji extends React.Component {
                         </div>
 
                         <div className="flex justify-around items-end pt-5">
-                            <div className="text-center w-36 border-2 border-primary  p-2 rounded-2xl hover:bg-neutral
-                            font-semibold bg-primary text-white">
+                            <div className="text-center w-36 border-2 border-gray-200  p-2 rounded-2xl hover:bg-neutral
+                            font-semibold bg-gray-200 text-black">
                                 <Link to='/#' onClick={this.addToCart.bind(this,
                                     this.state.id, this.state.naziv, this.state.cijena, this.state.putanja)}>Dodaj u
                                     korpu</Link>

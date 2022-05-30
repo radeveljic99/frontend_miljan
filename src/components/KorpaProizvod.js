@@ -80,7 +80,7 @@ class KorpaProizvod extends React.Component {
                         <img className="w-full h-full object-cover object-center" src={this.props.putanja}
                              alt="Vuksan"/>
                     </div>
-                    <div className="w-full sm:w-6/12 bg-white h-52 flex flex-col items-start pl-4 pt-4">
+                    <div className="w-full sm:w-6/12 bg-gray-100 h-52 flex flex-col items-start pl-4 pt-4">
                         <div className="flex flex-col items-center text-center w-full space-y-1">
                             <h2 className="text-20 text-gray-900 font-semibold leading-100">
                                 {this.excerpt(this.props.nazivProizvoda, 15)}
@@ -94,7 +94,7 @@ class KorpaProizvod extends React.Component {
                             <div className="text-center text-14">Ukupna cijena:
                                 € {this.state.totalPrice}
                             </div>
-                            <div className="w-full flex justify-center items-center text-white font-bold grow">
+                            <div className="w-full flex justify-center items-center text-black font-bold grow">
                                 <button
                                     className="h-10 flex justify-center items-center px-4 py-2 bg-indigo-500 hover:bg-indigo-700 hover:cursor-pointer rounded-lg">
                                     <Link to='/#'
@@ -129,8 +129,8 @@ class KorpaProizvod extends React.Component {
         //                 />
         //             </div>
         //             <div className="flex justify-around items-center border-b-2 border-white m-3 p-2">
-        //                 <div className="text-center w-64  border-2 border-primary  rounded-2xl text-primary font-semibold  hover:bg-primary
-        //            hover:text-white">
+        //                 <div className="text-center w-64  border-2 border-gray-200  rounded-2xl text-primary font-semibold  hover:bg-gray-200
+        //            hover:text-black">
         //                     <Link to='/#' onClick={this.removeProductFromCart.bind(this)} >Ukloni Iz Korpe</Link>
         //                 </div>
         //             </div>

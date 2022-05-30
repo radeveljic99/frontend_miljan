@@ -130,7 +130,7 @@ class AdminPanel extends React.Component {
 
 
 	render() {
-		return <div className="flex bg-base-100 text-white">
+		return <div className="flex bg-gray-100 text-black">
 			<div className="flex flex-col w-80 h-screen px-4 py-8 overflow-y-auto border-r">
 				<h2 className="text-3xl font-semibold text-center">Admin Panel</h2>
 				<div className="flex flex-col justify-between mt-6">
@@ -139,13 +139,13 @@ class AdminPanel extends React.Component {
 							<li>
 								<button
 									onClick={this.setActiveComponent.bind(this, 'addProduct')}
-									className="w-full mr-4 text-xl font-medium border border-white rounded-xl px-4 py-2 hover:bg-primary">
+									className="w-full mr-4 text-xl font-medium border border-white rounded-xl px-4 py-2 hover:bg-gray-200">
 									Dodaj proizvod
 								</button>
 							</li>
 							<li>
 								<button onClick={this.setActiveComponent.bind(this, 'addCategory')}
-										className="w-full mt-4 mr-4 text-xl font-medium border border-white rounded-xl px-4 py-2 hover:bg-primary">
+										className="w-full mt-4 mr-4 text-xl font-medium border border-white rounded-xl px-4 py-2 hover:bg-gray-200">
 									Dodaj kategoriju
 								</button>
 							</li>
@@ -155,9 +155,9 @@ class AdminPanel extends React.Component {
 			</div>
 			<div className="w-full h-full p-4 m-8 overflow-y-auto">
 				<div className="flex items-start justify-center">
-					<div className="h-full flex justify-center items-center gap-5 m-5 p-5 text-xl text-white">
+					<div className="h-full flex justify-center items-center gap-5 m-5 p-5 text-xl text-black">
 						{this.state.activeComponent === 'addProduct' ?
-							<form className="flex m-5 p-5 flex-col border-2 rounded-md border-primary bg-base-200 shadow-lg">
+							<form className="flex m-5 p-5 flex-col border-2 rounded-md border-gray-200 bg-gray-100 shadow-lg">
 								<h1 className="text-center text-2xl">Dodaj proizvod</h1>
 								<hr className="border mt-2"/>
 								<div className="pt-5">
@@ -165,7 +165,7 @@ class AdminPanel extends React.Component {
 										<label htmlFor="name">Naziv Proizvoda</label>
 										<br/>
 										<input type="text" id="name"
-											   className="pd-5 rounded-md text-black px-5 border-2 border-primary  w-full h-auto"
+											   className="pd-5 rounded-md text-black px-5 border-2 border-gray-200  w-full h-auto"
 											   value={this.state.productName}
 											   onChange={this.handleProductNameChanged}
 										/>
@@ -174,14 +174,14 @@ class AdminPanel extends React.Component {
 										<label htmlFor="image" className="my-5 py-5 w-auto">Slika</label>
 										<br/>
 										<input type="file" id="image" name="file"
-											   className="pd-5 rounded-md px-5 text-white h-auto w-auto"
+											   className="pd-5 rounded-md px-5 text-black h-auto w-auto"
 											   onChange={this.onFileChange}
 										/>
 									</div>
 
 									<label htmlFor="categories" className="p-1 m-2">Kategorija </label>
 									<br/>
-									<select name="category" id="categories" className="w-full m-2 border-2 border-primary rounded-md"
+									<select name="category" id="categories" className="w-full m-2 border-2 border-gray-200 rounded-md"
 											placeholder="Izaberi kategoriju "
 											value={this.state.selectedCategoryId} onChange={this.handleCategoryChange}>
 										{this.state.kategorije.map(
@@ -193,20 +193,20 @@ class AdminPanel extends React.Component {
 									<label htmlFor="price">Cijena</label>
 									<br/>
 									<input type="number" id="price"
-										   className="pd-5 rounded-md px-5 border-2 text-black border-primary w-full"
+										   className="pd-5 rounded-md px-5 border-2 text-black border-gray-200 w-full"
 										   value={this.state.productPrice}
 										   onChange={this.handleProductPriceChanged}/>
 								</div>
 								<button
-									className="mt-5 border-2 text-center border-primary  rounded-md  font-semibold
-                             bg-primary hover:bg-base-200 flex items-center justify-center"
+									className="mt-5 border-2 text-center border-gray-200  rounded-md  font-semibold
+                             bg-gray-200 hover:bg-gray-100 flex items-center justify-center"
 									onClick={this.onButtonClick}>
 									Dodaj Proizvod
 								</button>
 								<hr className="border mt-5 mb-3"/>
 							</form> : ''}
 						{this.state.activeComponent === 'addCategory' ?
-							<form className="flex m-5 p-5 flex-col border-2 rounded-md border-primary bg-base-200 shadow-lg">
+							<form className="flex m-5 p-5 flex-col border-2 rounded-md border-gray-200 bg-base-200 shadow-lg">
 								<h1 className="text-center text-2xl">Dodaj proizvod</h1>
 								<hr className="border mt-2"/>
 								<div className="pt-5">
@@ -214,15 +214,15 @@ class AdminPanel extends React.Component {
 										<label htmlFor="name">Naziv Kategorije</label>
 										<br/>
 										<input type="text" id="cateogryname"
-											   className="pd-5 rounded-md text-black px-5 border-2 border-primary  w-full h-auto"
+											   className="pd-5 rounded-md text-black px-5 border-2 border-gray-200  w-full h-auto"
 											   value={this.state.categoryName}
 											   onChange={this.handleCategoryNameChanged}
 										/>
 									</div>
 								</div>
 								<button
-									className="mt-5 border-2 text-center border-primary  rounded-md  font-semibold
-                             bg-primary hover:bg-base-200 flex items-center justify-center"
+									className="mt-5 border-2 text-center border-gray-200  rounded-md  font-semibold
+                             bg-gray-200 hover:bg-base-200 flex items-center justify-center"
 									onClick={this.addCategory}>
 									Dodaj Kategoriju
 								</button>

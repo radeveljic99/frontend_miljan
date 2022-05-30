@@ -81,7 +81,7 @@ class Korpa extends React.Component {
 
     render() {
         return <div className="text-center text-xl mx-5 p-5 " style={{minHeight: "80vh"}}>
-            <h1 className="text-white text-3xl"> Vaša Korpa</h1>
+            <h1 className="text-black text-3xl"> Vaša Korpa</h1>
             {
                 this.state.proizvodi.map((proizvod) => <KorpaProizvod
                     key={proizvod.product_id}
@@ -95,13 +95,13 @@ class Korpa extends React.Component {
             }
             {
                 this.state.proizvodi.length == 0 ?
-                    <h2 className=" text-xl p-5 m-5 text-white"> Vaša Korpa je Trenutno prazna</h2> : ''
+                    <h2 className=" text-xl p-5 m-5 text-black"> Vaša Korpa je Trenutno prazna</h2> : ''
             }
             {
                 this.state.proizvodi.length > 0 ? <div className="flex justify-around items-center">
                     <div
                         className="flex justify-around items-center text-center p-2 rounded-lg w-96">
-                        <div className="text-center w-36 rounded-2xl text-primary font-semibold bg-white py-2 hover:bg-gray-200
+                        <div className="text-center w-36 rounded-2xl text-primary font-semibold bg-gray-100 py-2 hover:bg-gray-200
                    hover:text-blue-700">
                             <Link to='/#' onClick={this.makeOrder}>NARUČI</Link>
                         </div>
