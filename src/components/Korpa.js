@@ -15,6 +15,7 @@ class Korpa extends React.Component {
 
 	componentDidMount() {
 		this.handleChangeOnCartItems();
+		console.log('componentDidMount');
 	}
 
 	handleChangeOnCartItems() {
@@ -80,14 +81,14 @@ class Korpa extends React.Component {
 	}
 
 	render() {
-		return <div className="flex flex-col justify-center h-screen">
+		return <div className="flex flex-col justify-center mt-20 sm:mb-20 md:mb-60">
 			<div className="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
 				<header className="px-5 py-4 border-b border-gray-100">
 					<div className="font-semibold text-gray-800">Korpa</div>
 				</header>
 
 				<div className="overflow-x-auto p-3">
-					<table className="table-auto w-full">
+					{ this.state.proizvodi.length > 0 ? 			<table className="table-auto w-full">
 						<thead className="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
 						<tr>
 							<th className="p-2">
@@ -118,14 +119,16 @@ class Korpa extends React.Component {
 							/>)
 						}
 						</tbody>
-					</table>
+					</table> : <div className="w-full flex justify-center text-center text-xl">Korpa je prazna</div>}
 				</div>
 
-				<div className="flex justify-center font-bold space-x-4 text-lg border-t border-gray-100 py-2">
+				{ this.state.proizvodi.length > 0 ?
+					<div className="flex justify-center font-bold space-x-4 text-lg border-t border-gray-100 py-2">
 					<button
 						onClick={this.makeOrder}
-						className="border-2 border-gray-200 mb-1 px-10 text-black font-semibold hover:bg-gray-200 hover:text-black capitalize">NARUČI</button>
-				</div>
+						className="border-2 border-gray-200 mb-1 px-10 text-black font-semibold hover:bg-gray-200 hover:text-black capitalize">NARUČI
+					</button>
+				</div>: ''}
 
 			</div>
 		</div>

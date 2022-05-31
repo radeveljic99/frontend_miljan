@@ -1,9 +1,14 @@
 import React from "react";
 import {Link, withRouter} from "react-router-dom";
 import axios from "axios";
+import {useHistory} from 'react-router-dom';
 
 
 class KorpaProizvod extends React.Component {
+
+
+	// const handleOnClick = useCallback(() => navigate('/cart', {replace: true}), [navigate]);
+
 
 	constructor(props) {
 		super(props);
@@ -58,10 +63,10 @@ class KorpaProizvod extends React.Component {
 	}
 
 	removeProductFromCart = event => {
-		console.log(this.state.productId);
 		axios.delete(`http://localhost:5000/cartProducts/${this.state.productId}`).then(
 			response => {
-				window.alert("Product successfully deleted");
+				// window.alert("Product successfully deleted");
+				// console.log('refresh');
 				this.props.history.push({pathname: '/cart'});
 			},
 			err => {
@@ -92,7 +97,7 @@ class KorpaProizvod extends React.Component {
 			</td>
 			<td className="p-2">
 				<div className="flex justify-center">
-					<button onClick={this.removeProductFromCart.bind(this)}>
+					<Link to='/#' onClick={this.removeProductFromCart.bind(this)}>
 						<svg className="w-8 h-8 hover:text-blue-600 rounded-full hover:bg-gray-100 p-1"
 							 fill="none" stroke="currentColor" viewBox="0 0 24 24"
 							 xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +105,7 @@ class KorpaProizvod extends React.Component {
 								  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
 							</path>
 						</svg>
-					</button>
+					</Link>
 				</div>
 			</td>
 		</tr>

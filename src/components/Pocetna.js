@@ -148,7 +148,7 @@ class Pocetna extends React.Component {
 				}
 			</div>
 			{
-				this.state.proizvodi.length !== 0 ?
+				this.state.proizvodi.length !== 0 && this.state.search === '' ?
 					<div className="w-full flex justify-center my-4">
 						<Pagination
 							activatedPage={this.state.activatedPage}
