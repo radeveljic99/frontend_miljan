@@ -90,7 +90,7 @@ class Register extends React.Component {
 
 	render() {
 		return <div style={{minHeight: "80vh"}}>
-			<div className="font-sans mt-20">
+			<div className="mt-20">
 				<div className="relative h-full flex flex-col sm:justify-center items-center bg-gray-100">
 					<div className="relative sm:max-w-sm w-full">
 						<div className="card bg-blue-400 shadow-lg w-full h-full rounded-3xl absolute  transform -rotate-6"></div>

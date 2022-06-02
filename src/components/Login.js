@@ -30,7 +30,6 @@ class Login extends React.Component {
 		let email = localStorage.getItem('email');
 		axios.get(`http://localhost:5000/users/email/${email}`).then(
 			response => {
-				console.log("Response " + response.data.is_admin);
 				localStorage.setItem('userId', response.data.id);
 				localStorage.setItem('userMoney', response.data.balance);
 				localStorage.setItem('isAdmin', response.data.is_admin);
@@ -67,7 +66,7 @@ class Login extends React.Component {
 
 	render() {
 		return <div style={{minHeight: "80vh"}}>
-			<div className="font-sans mt-20">
+			<div className="mt-20">
 				<div className="relative h-full flex flex-col sm:justify-center items-center bg-gray-100">
 					<div className="relative sm:max-w-sm w-full">
 						<div className="card bg-blue-400 shadow-lg w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
@@ -120,7 +119,6 @@ class Login extends React.Component {
 			</div>
 		</div>
 	}
-
 }
 
 export default withRouter(Login);

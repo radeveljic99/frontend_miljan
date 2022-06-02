@@ -107,7 +107,7 @@ class Pocetna extends React.Component {
 
 	render() {
 
-		return <div className="container mx-auto px-6">
+		return <div className="container mx-auto px-6 content-height">
 			<div className="sm:flex sm:justify-center sm:items-center mt-4">
 				<Kategorije kategorije={this.state.kategorije} onCategoryChange={this.handleCategoryChange}/>
 			</div>

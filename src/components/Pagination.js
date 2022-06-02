@@ -38,7 +38,7 @@ class Pagination extends React.Component {
 			this.state.productPageId.push(i);
 		}
 
-		return <div className="flex justify-center items-center flex-wrap mb-2">
+		return <div className="flex justify-center items-center flex-wrap mb-4">
 			<div className="pagination space-x-2 text-black">
 				{
 					this.state.numberOfPages !== 1 ?
